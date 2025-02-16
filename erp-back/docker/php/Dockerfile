@@ -19,5 +19,8 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 # Set working directory
 WORKDIR /var/www/html
 
-# Expose port 8000
-EXPOSE 8000
+# Ensure PHP-FPM listens on the default port (9000)
+CMD ["php-fpm"]
+
+# Expose the FastCGI port for PHP-FPM
+EXPOSE 9000

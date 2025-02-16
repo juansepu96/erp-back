@@ -11,7 +11,8 @@ use Illuminate\Notifications\Notifiable;
 class User extends Authenticatable
 {
     /** @use HasFactory<UserFactory> */
-    use HasFactory, Notifiable;
+    use HasFactory;
+    use Notifiable;
 
     /**
      * The attributes that are mass assignable.
@@ -48,7 +49,7 @@ class User extends Authenticatable
         ];
     }
 
-    public function Person():BelongsTo
+    public function Person(): BelongsTo
     {
         return $this->belongsTo(Person::class);
     }

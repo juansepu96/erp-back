@@ -28,7 +28,7 @@ class AuthController extends Controller
             $useCase = new LoginUseCase(
                 $this->repository
             );
-            $user = $useCase($username,$password);
+            $user = $useCase($username, $password);
             return response()->json(
                 ['message' => 'Login exitoso.', 'user' => $user]
             );

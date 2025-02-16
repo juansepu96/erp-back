@@ -11,23 +11,21 @@ use Src\Auth\Domain\ValueObjects\Username;
 
 readonly class LoginUseCase
 {
-
     private AuthRepository $repository;
 
     public function __construct(
         AuthRepository $repository
-    )
-    {
+    ) {
         $this->repository = $repository;
     }
 
     /**
      * @throws InvalidCredentialsException
      */
-    public function __invoke(Username $username, Password $password):array
+    public function __invoke(Username $username, Password $password): array
     {
-        $user = $this->repository->findByUsername($username,$password);
-        if(!$user){
+        $user = $this->repository->findByUsername($username, $password);
+        if (!$user) {
             throw new InvalidCredentialsException();
         }
         return UserMapper::fromEntityToArray($user);

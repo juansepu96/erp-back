@@ -6,7 +6,6 @@ use Carbon\Carbon;
 
 readonly class LastLogin
 {
-
     private Carbon $value;
 
     public function __construct(Carbon $value)
@@ -14,7 +13,7 @@ readonly class LastLogin
         $this->value = $value;
     }
 
-    public function getValue():Carbon
+    public function getValue(): Carbon
     {
         return $this->value;
     }

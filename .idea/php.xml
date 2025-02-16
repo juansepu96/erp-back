@@ -15,6 +15,11 @@
     <option name="highlightLevel" value="WARNING" />
     <option name="transferred" value="true" />
   </component>
+  <component name="PhpCSFixer">
+    <phpcsfixer_settings>
+      <PhpCSFixerConfiguration tool_path="$PROJECT_DIR$/erp-back/vendor/bin/php-cs-fixer" />
+    </phpcsfixer_settings>
+  </component>
   <component name="PhpCodeSniffer">
     <phpcs_settings>
       <phpcs_by_interpreter asDefaultInterpreter="true" interpreter_id="88ffd70f-f2a5-4d63-bcf1-cfd2b2032507" timeout="30000" />
@@ -140,6 +145,23 @@
       <path value="$PROJECT_DIR$/erp-back/vendor/php-http/message" />
       <path value="$PROJECT_DIR$/erp-back/vendor/php-http/curl-client" />
       <path value="$PROJECT_DIR$/erp-back/vendor/symfony/options-resolver" />
+      <path value="$PROJECT_DIR$/erp-back/vendor/fidry/cpu-core-counter" />
+      <path value="$PROJECT_DIR$/erp-back/vendor/react/stream" />
+      <path value="$PROJECT_DIR$/erp-back/vendor/react/dns" />
+      <path value="$PROJECT_DIR$/erp-back/vendor/react/cache" />
+      <path value="$PROJECT_DIR$/erp-back/vendor/react/child-process" />
+      <path value="$PROJECT_DIR$/erp-back/vendor/react/socket" />
+      <path value="$PROJECT_DIR$/erp-back/vendor/react/promise" />
+      <path value="$PROJECT_DIR$/erp-back/vendor/react/event-loop" />
+      <path value="$PROJECT_DIR$/erp-back/vendor/phpmyadmin/sql-parser" />
+      <path value="$PROJECT_DIR$/erp-back/vendor/phpstan/phpstan" />
+      <path value="$PROJECT_DIR$/erp-back/vendor/friendsofphp/php-cs-fixer" />
+      <path value="$PROJECT_DIR$/erp-back/vendor/evenement/evenement" />
+      <path value="$PROJECT_DIR$/erp-back/vendor/clue/ndjson-react" />
+      <path value="$PROJECT_DIR$/erp-back/vendor/symfony/polyfill-php81" />
+      <path value="$PROJECT_DIR$/erp-back/vendor/symfony/filesystem" />
+      <path value="$PROJECT_DIR$/erp-back/vendor/symfony/stopwatch" />
+      <path value="$PROJECT_DIR$/erp-back/vendor/nunomaduro/larastan" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.2">
@@ -147,6 +169,7 @@
   </component>
   <component name="PhpStan">
     <PhpStan_settings>
+      <PhpStanConfiguration tool_path="$PROJECT_DIR$/erp-back/vendor/bin/phpstan" />
       <phpstan_by_interpreter asDefaultInterpreter="true" interpreter_id="88ffd70f-f2a5-4d63-bcf1-cfd2b2032507" timeout="60000" />
     </PhpStan_settings>
   </component>

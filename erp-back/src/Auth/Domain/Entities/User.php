@@ -10,26 +10,25 @@ use Src\Shared\ValueObjects\IdPersona;
 
 readonly class User
 {
-   private IdPersona $idPersona;
-   private Username $username;
-   private Password $password;
-   private LastLogin $lastLogin;
-   private Active $active;
+    private IdPersona $idPersona;
+    private Username $username;
+    private Password $password;
+    private LastLogin $lastLogin;
+    private Active $active;
 
-   public function __construct(
-       IdPersona $idPersona,
-       Username $username,
-       Password $password,
-       LastLogin $lastLogin,
-       Active $active
-   )
-   {
-       $this->idPersona = $idPersona;
-       $this->username = $username;
-       $this->password = $password;
-       $this->lastLogin = $lastLogin;
-       $this->active = $active;
-   }
+    public function __construct(
+        IdPersona $idPersona,
+        Username $username,
+        Password $password,
+        LastLogin $lastLogin,
+        Active $active
+    ) {
+        $this->idPersona = $idPersona;
+        $this->username = $username;
+        $this->password = $password;
+        $this->lastLogin = $lastLogin;
+        $this->active = $active;
+    }
 
     public function getIdPersona(): IdPersona
     {

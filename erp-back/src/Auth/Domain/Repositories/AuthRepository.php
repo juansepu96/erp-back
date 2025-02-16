@@ -8,6 +8,6 @@ use Src\Auth\Domain\ValueObjects\Username;
 
 interface AuthRepository
 {
-    public function findByUsername(Username $username,Password $password):?User;
+    public function findByUsername(Username $username, Password $password): ?User;
 
 }

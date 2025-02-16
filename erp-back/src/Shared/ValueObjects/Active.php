@@ -11,7 +11,8 @@ readonly class Active
         $this->value = $value;
     }
 
-    public function getValue():bool{
+    public function getValue(): bool
+    {
         return $this->value;
     }
 

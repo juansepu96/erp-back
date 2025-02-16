@@ -25,7 +25,7 @@ class Person extends Model
         'birthdate' => 'date',
     ];
 
-    public function user():HasOne
+    public function user(): HasOne
     {
         return $this->hasOne(User::class);
     }

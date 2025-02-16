@@ -5,8 +5,26 @@
       <sourceFolder url="file://$MODULE_DIR$/erp-back/app" isTestSource="false" packagePrefix="App\" />
       <sourceFolder url="file://$MODULE_DIR$/erp-back/database/factories" isTestSource="false" packagePrefix="Database\Factories\" />
       <sourceFolder url="file://$MODULE_DIR$/erp-back/database/seeders" isTestSource="false" packagePrefix="Database\Seeders\" />
+      <sourceFolder url="file://$MODULE_DIR$/erp-back/tests" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/erp-back/tests" isTestSource="true" packagePrefix="Tests\" />
       <sourceFolder url="file://$MODULE_DIR$/erp-back/src" isTestSource="false" packagePrefix="Src\" />
+      <excludeFolder url="file://$MODULE_DIR$/erp-back/vendor/clue/ndjson-react" />
+      <excludeFolder url="file://$MODULE_DIR$/erp-back/vendor/evenement/evenement" />
+      <excludeFolder url="file://$MODULE_DIR$/erp-back/vendor/fidry/cpu-core-counter" />
+      <excludeFolder url="file://$MODULE_DIR$/erp-back/vendor/friendsofphp/php-cs-fixer" />
+      <excludeFolder url="file://$MODULE_DIR$/erp-back/vendor/nunomaduro/larastan" />
+      <excludeFolder url="file://$MODULE_DIR$/erp-back/vendor/phpmyadmin/sql-parser" />
+      <excludeFolder url="file://$MODULE_DIR$/erp-back/vendor/phpstan/phpstan" />
+      <excludeFolder url="file://$MODULE_DIR$/erp-back/vendor/react/cache" />
+      <excludeFolder url="file://$MODULE_DIR$/erp-back/vendor/react/child-process" />
+      <excludeFolder url="file://$MODULE_DIR$/erp-back/vendor/react/dns" />
+      <excludeFolder url="file://$MODULE_DIR$/erp-back/vendor/react/event-loop" />
+      <excludeFolder url="file://$MODULE_DIR$/erp-back/vendor/react/promise" />
+      <excludeFolder url="file://$MODULE_DIR$/erp-back/vendor/react/socket" />
+      <excludeFolder url="file://$MODULE_DIR$/erp-back/vendor/react/stream" />
+      <excludeFolder url="file://$MODULE_DIR$/erp-back/vendor/symfony/filesystem" />
+      <excludeFolder url="file://$MODULE_DIR$/erp-back/vendor/symfony/polyfill-php81" />
+      <excludeFolder url="file://$MODULE_DIR$/erp-back/vendor/symfony/stopwatch" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

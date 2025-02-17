@@ -2,7 +2,7 @@
 
 namespace Src\Shared\ValueObjects;
 
-readonly class IdPersona
+readonly class Id
 {
     private int $value;
 

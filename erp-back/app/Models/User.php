@@ -14,6 +14,8 @@ class User extends Authenticatable
     use HasFactory;
     use Notifiable;
 
+    protected $table = 'users';
+
     /**
      * The attributes that are mass assignable.
      *
@@ -23,7 +25,8 @@ class User extends Authenticatable
         'person_id',
         'username',
         'last_login',
-        'active'
+        'active',
+        'role_id'
     ];
 
     /**
@@ -52,5 +55,10 @@ class User extends Authenticatable
     public function Person(): BelongsTo
     {
         return $this->belongsTo(Person::class);
+    }
+
+    public function Role(): BelongsTo
+    {
+        return $this->belongsTo(Role::class);
     }
 }

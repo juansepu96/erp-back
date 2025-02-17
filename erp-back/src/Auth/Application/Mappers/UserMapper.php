@@ -9,11 +9,10 @@ class UserMapper
     public static function fromEntityToArray(User $user): array
     {
         return [
-            $user->getIdPersona()->getValue(),
-            $user->getUsername()->getValue(),
-            $user->getPassword()->getValue(),
-            $user->getLastLogin()->getValue(),
-            $user->getActive()->getValue()
+            'id' => $user->getIdUser()->getValue(),
+            'person_id' => $user->getIdPersona()->getValue(),
+            'name' => $user->getUsername()->getValue(),
+            'lastname' => $user->getLastLogin()->getValue(),
         ];
     }
 }

@@ -18,12 +18,18 @@ return new class extends Migration
             $table->string('password');
             $table->timestamp('last_login')->nullable();
             $table->boolean('active')->default(true);
+            $table->unsignedBigInteger('role_id');
             $table->rememberToken();
             $table->timestamps();
 
             $table->foreign('person_id')
                 ->references('id')
                 ->on('persons')
+                ->onDelete('cascade');
+
+            $table->foreign('role_id')
+                ->references('id')
+                ->on('roles')
                 ->onDelete('cascade');
         });
     }

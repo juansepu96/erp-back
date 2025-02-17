@@ -8,7 +8,7 @@ use Src\Shared\Enums\StatusCodeEnum;
 class InvalidCredentialsException extends Exception
 {
     public function __construct(
-        $message = "Credenciales inváLidas",
+        $message = "Credenciales inválidas",
         $code = StatusCodeEnum::UNAUTHORIZED->value,
         Exception $previous = null
     ) {

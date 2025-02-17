@@ -10,4 +10,10 @@ interface AuthRepository
 {
     public function findByUsername(Username $username, Password $password): ?User;
 
+    public function generateToken(User $user): string;
+
+    public function removeToken(string $token): void;
+
+    public function validateToken(string $token): void;
+
 }

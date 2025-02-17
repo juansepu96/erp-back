@@ -3,36 +3,70 @@
 namespace Src\Auth\Domain\Entities;
 
 use Src\Auth\Domain\ValueObjects\LastLogin;
+use Src\Auth\Domain\ValueObjects\Lastname;
+use Src\Auth\Domain\ValueObjects\Name;
 use Src\Auth\Domain\ValueObjects\Password;
+use Src\Auth\Domain\ValueObjects\Role;
 use Src\Auth\Domain\ValueObjects\Username;
 use Src\Shared\ValueObjects\Active;
-use Src\Shared\ValueObjects\IdPersona;
+use Src\Shared\ValueObjects\Id;
 
 readonly class User
 {
-    private IdPersona $idPersona;
+    private Id $idUser;
+    private Id $idPerson;
     private Username $username;
     private Password $password;
     private LastLogin $lastLogin;
     private Active $active;
+    private Name $name;
+    private Lastname $lastname;
+    private Role $role;
 
     public function __construct(
-        IdPersona $idPersona,
-        Username $username,
-        Password $password,
+        Id        $idUser,
+        Id        $idPerson,
+        Username  $username,
+        Password  $password,
         LastLogin $lastLogin,
-        Active $active
+        Active    $active,
+        Name $name,
+        Lastname $lastname,
+        Role $role
     ) {
-        $this->idPersona = $idPersona;
+        $this->idUser = $idUser;
+        $this->idPerson = $idPerson;
         $this->username = $username;
         $this->password = $password;
         $this->lastLogin = $lastLogin;
         $this->active = $active;
+        $this->name = $name;
+        $this->lastname = $lastname;
+        $this->role = $role;
     }
 
-    public function getIdPersona(): IdPersona
+    public function getName(): Name
     {
-        return $this->idPersona;
+        return $this->name;
+    }
+
+    public function getLastname(): Lastname
+    {
+        return $this->lastname;
+    }
+
+    public function getRole(): Role
+    {
+        return $this->role;
+    }
+
+    public function getIdUser(): Id
+    {
+        return $this->idUser;
+    }
+    public function getIdPersona(): Id
+    {
+        return $this->idPerson;
     }
 
     public function getUsername(): Username

@@ -1,10 +1,10 @@
 <?php
 
-namespace Src\Shared\ValueObjects;
+namespace Src\Person\Domain\ValueObjects;
 
-readonly class IdPersona
+readonly class Number
 {
-    private int $value;
+    private string $value;
 
     public function __construct(int $value)
     {

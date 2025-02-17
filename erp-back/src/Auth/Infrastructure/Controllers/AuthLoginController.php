@@ -11,26 +11,24 @@ use Src\Auth\Domain\Repositories\AuthRepository;
 use Src\Auth\Domain\Services\AuthService;
 use Src\Auth\Domain\ValueObjects\Password;
 use Src\Auth\Domain\ValueObjects\Username;
+use Src\Auth\Infrastructure\Requests\AuthLoginRequest;
 use Src\Shared\Facades\AuthUser;
 
 class AuthLoginController extends Controller
 {
-    private AuthRepository $repository;
     private AuthService $service;
 
-    public function __construct(AuthRepository $repository,AuthService $service)
+    public function __construct(AuthRepository $repository, AuthService $service)
     {
-        $this->repository = $repository;
         $this->service = $service;
     }
 
-    public function __invoke(Request $request): JsonResponse
+    public function __invoke(AuthLoginRequest $request): JsonResponse
     {
         try {
             $username = new Username($request->input('username'));
             $password = new Password($request->input('password'));
             $useCase = new LoginUseCase(
-                $this->repository,
                 $this->service
             );
             $user = $useCase($username, $password);

@@ -6,17 +6,16 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
-class Role extends Model
+/**
+ * @method static where(string $string, string $token)
+ * @method static find(int $getValue)
+ */
+class Token extends Model
 {
     use HasFactory;
-    protected $table = 'roles';
+    protected $table = 'personal_access_tokens';
     protected $fillable = [
-        'name'
+        'id','token','expires_at'
     ];
-
-    public function user(): HasOne
-    {
-        return $this->hasOne(User::class);
-    }
 
 }

@@ -16,6 +16,7 @@ class AuthUserMiddleware
     {
         $this->authService = $authService;
     }
+
     /**
      * Handle an incoming request.
      *
@@ -26,13 +27,12 @@ class AuthUserMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        $user = session('user');
-        $this->authService->setUser($user);
-        dd($this->authService->getUser());
-        if (!$this->authService->isLogged()) {
-            throw new InvalidCredentialsException();
+        $authorizationHeader = $request->header('Authorization');
+        if ($authorizationHeader && str_starts_with($authorizationHeader, 'Bearer ')) {
+            $token = substr($authorizationHeader, 7);
+            $this->authService->validateToken($token);
+            return $next($request);
         }
-
-        return $next($request);
+        throw new InvalidCredentialsException();
     }
 }

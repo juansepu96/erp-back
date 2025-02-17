@@ -14,14 +14,10 @@ use Src\Shared\Facades\AuthUser;
 
 readonly class LoginUseCase
 {
-    private AuthRepository $repository;
     private AuthService $authService;
-
     public function __construct(
-        AuthRepository $repository,
         AuthService $authService
     ) {
-        $this->repository = $repository;
         $this->authService = $authService;
     }
 
@@ -30,13 +26,12 @@ readonly class LoginUseCase
      */
     public function __invoke(Username $username, Password $password): array
     {
-        $user = $this->repository->findByUsername($username, $password);
+        $user = $this->authService->findByUsername($username, $password);
         if (!$user) {
             throw new InvalidCredentialsException();
         }
-        $this->authService->setUser($user);
-        session(['user' => $user]);
-        return UserMapper::fromEntityToArray($user);
+        $token = $this->authService->generateToken($user);
+        return UserMapper::fromEntityToArray($user, $token);
     }
 
 }

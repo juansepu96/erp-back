@@ -14,7 +14,7 @@ use Src\Auth\Domain\Entities\User;
  */
 class AuthUser extends Facade
 {
-    protected static function getFacadeAccessor():string
+    protected static function getFacadeAccessor(): string
     {
         return 'auth-user';
     }

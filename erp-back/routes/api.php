@@ -8,7 +8,7 @@ use Src\Auth\Infrastructure\Controllers\AuthLogoutController;
 Route::post('/login', AuthLoginController::class);
 
 Route::middleware(AuthUserMiddleware::class)->group(function () {
-    Route::post('/logout', AuthLogoutController::class);
+    Route::delete('/logout', AuthLogoutController::class);
     Route::get('/user', function(){
         dd('Funciona la ruta');
     });

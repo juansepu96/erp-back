@@ -60,7 +60,7 @@ readonly class User
         return $this->role;
     }
 
-    public function getIdUser():Id
+    public function getIdUser(): Id
     {
         return $this->idUser;
     }

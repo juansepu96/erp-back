@@ -1,6 +1,7 @@
 <?php
 
 namespace Src\Person\Domain\ValueObjects;
+
 readonly class Phone
 {
     private string $value;

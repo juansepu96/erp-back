@@ -4,15 +4,14 @@ namespace Src\Person\Domain\ValueObjects;
 
 use Carbon\Carbon;
 
-readonly class Birthdate
+readonly class BirthDate
 {
-    private string $value;
+    private Carbon $value;
 
     public function __construct(Carbon $value)
     {
         $this->value = $value;
     }
-
     public function getValue(): Carbon
     {
         return $this->value;

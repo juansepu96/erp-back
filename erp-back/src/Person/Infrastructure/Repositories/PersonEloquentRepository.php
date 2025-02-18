@@ -7,6 +7,7 @@ use Src\Auth\Domain\Exceptions\InvalidCredentialsException;
 use Src\Person\Domain\Entities\Person;
 use Src\Person\Domain\Repositories\PersonRepository;
 use App\Models\Person as PersonModel;
+use Src\Shared\ValueObjects\Id;
 
 class PersonEloquentRepository implements PersonRepository
 {
@@ -35,8 +36,8 @@ class PersonEloquentRepository implements PersonRepository
     {
     }
 
-    public function findById(\Src\Shared\ValueObjects\Id $id): ?Person
+    public function findById(Id $id): ?Person
     {
-        // TODO: Implement findById() method.
+        return null;
     }
 }

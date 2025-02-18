@@ -25,15 +25,15 @@ readonly class Person
     private Note $note;
 
     public function __construct(
-        Name $name,
-        LastName $lastname,
-        Document $document,
-        Birthdate $birthdate,
-        Email $email,
-        Phone $phone,
-        Address $address,
-        Note $note = null,
-        Id $id = null
+        Name      $name,
+        LastName  $lastname,
+        Document  $document,
+        BirthDate $birthdate,
+        Email     $email,
+        Phone     $phone,
+        Address   $address,
+        Note      $note = null,
+        Id        $id = null
     ) {
         $this->name = $name;
         $this->lastname = $lastname;

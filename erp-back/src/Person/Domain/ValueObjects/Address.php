@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Src\Person\Domain\ValueObjects;
 
 readonly class Address
@@ -15,8 +14,7 @@ readonly class Address
         Number     $number,
         Floor      $floor,
         DoorNumber $doorNumber
-    )
-    {
+    ) {
         $this->street = $street;
         $this->number = $number;
         $this->floor = $floor;

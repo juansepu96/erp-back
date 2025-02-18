@@ -2,43 +2,69 @@
 
 namespace Database\Factories;
 
+use App\Models\Person;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
+use Src\Shared\Enums\RoleTypesEnum;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\User>
+ * @extends Factory<User>
  */
 class UserFactory extends Factory
 {
     /**
-     * The current password being used by the factory.
+     * The name of the factory's corresponding model.
+     *
+     * @var string
      */
-    protected static ?string $password;
+    protected $model = User::class;
 
     /**
      * Define the model's default state.
      *
-     * @return array<string, mixed>
+     * @return array
      */
-    public function definition(): array
+    public function definition():array
     {
         return [
-            'name' => fake()->name(),
-            'email' => fake()->unique()->safeEmail(),
-            'email_verified_at' => now(),
-            'password' => static::$password ??= Hash::make('password'),
+            'person_id' => Person::factory(),
+            'username' => $this->faker->unique()->userName,
+            'password' => bcrypt('1234'),
+            'last_login' => $this->faker->dateTimeThisYear,
+            'active' => $this->faker->boolean,
+            'role_id' => $this->faker->numberBetween(RoleTypesEnum::ADMINISTRADOR->value),
             'remember_token' => Str::random(10),
+            'created_at' => $this->faker->dateTimeThisYear,
+            'updated_at' => $this->faker->dateTimeThisYear,
         ];
     }
 
     /**
-     * Indicate that the model's email address should be unverified.
+     * Indicate that the user is active.
+     *
+     * @return Factory
      */
-    public function unverified(): static
+    public function active():array
     {
-        return $this->state(fn (array $attributes) => [
-            'email_verified_at' => null,
-        ]);
+        return $this->state(function (array $attributes) {
+            return [
+                'active' => true,
+            ];
+        });
+    }
+
+    /**
+     * Indicate that the user is inactive.
+     *
+     * @return Factory
+     */
+    public function inactive():array
+    {
+        return $this->state(function (array $attributes) {
+            return [
+                'active' => false,
+            ];
+        });
     }
 }

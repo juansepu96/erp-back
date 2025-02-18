@@ -1,7 +1,8 @@
 <?php
 
 namespace Src\Shared\Enums;
-enum ProvincesEnum: int
+
+enum ProvinceEnum: int
 {
     case BUENOS_AIRES = 1;
     case BUENOS_AIRES_GBA = 2;

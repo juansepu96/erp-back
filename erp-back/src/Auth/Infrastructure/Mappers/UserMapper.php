@@ -2,18 +2,17 @@
 
 namespace Src\Auth\Infrastructure\Mappers;
 
-use Carbon\Carbon;
+use App\Models\User as UserModel;
 use Src\Auth\Domain\Entities\User;
 use Src\Auth\Domain\ValueObjects\LastLogin;
 use Src\Auth\Domain\ValueObjects\Lastname;
-use Src\Auth\Domain\ValueObjects\Name;
 use Src\Auth\Domain\ValueObjects\Password;
 use Src\Auth\Domain\ValueObjects\Role;
 use Src\Auth\Domain\ValueObjects\Username;
 use Src\Shared\Enums\RoleTypesEnum;
 use Src\Shared\ValueObjects\Active;
 use Src\Shared\ValueObjects\Id;
-use App\Models\User as UserModel;
+use Src\Shared\ValueObjects\Name;
 
 class UserMapper
 {

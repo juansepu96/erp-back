@@ -4,12 +4,12 @@ namespace Src\Auth\Domain\Entities;
 
 use Src\Auth\Domain\ValueObjects\LastLogin;
 use Src\Auth\Domain\ValueObjects\Lastname;
-use Src\Auth\Domain\ValueObjects\Name;
 use Src\Auth\Domain\ValueObjects\Password;
 use Src\Auth\Domain\ValueObjects\Role;
 use Src\Auth\Domain\ValueObjects\Username;
 use Src\Shared\ValueObjects\Active;
 use Src\Shared\ValueObjects\Id;
+use Src\Shared\ValueObjects\Name;
 
 readonly class User
 {

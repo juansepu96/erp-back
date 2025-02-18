@@ -40,7 +40,7 @@ class PersonFactory extends Factory
      * Indicate that the person has specific birthdate.
      *
      * @param  string  $birthdate
-     * @return \Illuminate\Database\Eloquent\Factories\Factory
+     * @return Factory
      */
     public function birthdate($birthdate):array
     {
@@ -55,7 +55,7 @@ class PersonFactory extends Factory
      * Indicate that the person has specific document.
      *
      * @param  string  $document
-     * @return \Illuminate\Database\Eloquent\Factories\Factory
+     * @return Factory
      */
     public function document($document):array
     {
